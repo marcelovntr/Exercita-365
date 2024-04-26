@@ -1,0 +1,26 @@
+{
+    "usuarios": [
+
+{
+    "id": 1,
+    "email": "bruno@gmail",
+    "nome": "Bruno",
+    "senha": 123456,
+    "isLogado": false
+},
+
+{
+    "id": 2,
+    "email": "nik@gmail",
+    "nome": "Nicolo",
+    "senha": 123456,
+    "isLogado": false
+
+}
+
+
+    ],
+
+    "listalocais":[]
+
+}
