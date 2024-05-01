@@ -1,26 +1,108 @@
 {
     "usuarios": [
-
-{
-    "id": 1,
-    "email": "bruno@gmail",
-    "nome": "Bruno",
-    "senha": 123456,
-    "isLogado": false
-},
-
-{
-    "id": 2,
-    "email": "nik@gmail",
-    "nome": "Nicolo",
-    "senha": 123456,
-    "isLogado": false
-
-}
-
-
+      {
+        "id": "1",
+        "nome": "Ruan Vinicius",
+        "sexo": "masculino",
+        "cpf": "42326868005",
+        "nascimento": "15/02/1949",
+        "email": "ruan.mmoura@tarp.com.br",
+        "senha": "123456",
+        "cep": "72020283",
+        "endereco": "Área Especial Área Especial 26",
+        "bairro": "Taguatinga Sul (Taguatinga)",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "complemento": "casa verde",
+        "numero": 781,
+        "logado": false
+      },
+      {
+        "id": "2",
+        "nome": "Anthony Aragão",
+        "sexo": "masculino",
+        "cpf": "49060269071",
+        "nascimento": "24/01/1993",
+        "email": "geraldo_moraes@teravida.com.br",
+        "senha": "aUaZG04OGt",
+        "cep": "68909821",
+        "endereco": "Avenida Glicério de Souza Figueredo",
+        "bairro": "Novo Horizonte",
+        "cidade": "Macapá",
+        "estado": "AP",
+        "complemento": "após a última figueira",
+        "numero": 204,
+        "logado": false
+      },
+      {
+        "id": "3",
+        "nome": "Thales Raimundo das Neves",
+        "sexo": "masculino",
+        "cpf": "60877602611",
+        "nascimento": "11/04/1998",
+        "email": "thalesraimundodasneves@suzano.com.br",
+        "senha": "cLhG6stBlG",
+        "cep": "69922038",
+        "endereco": "Avenida Caracas",
+        "bairro": "Jorge Lavocat",
+        "cidade": "Rio Branco",
+        "estado": "AC",
+        "complemento": "",
+        "numero": 108,
+        "logado": false
+      },
+      {
+        "id": "4",
+        "nome": "Augusta Levi Sales",
+        "sexo": "feminino",
+        "cpf": "57096236104",
+        "nascimento": "26/04/1988",
+        "email": "augusta-sales87@termaqui.com.br",
+        "senha": "XtsyDFmeZl",
+        "cep": "88310060",
+        "endereco": "Avenida Agostinho Alves Ramos",
+        "bairro": "Cordeiros",
+        "cidade": "Itajaí",
+        "estado": "SC",
+        "complemento": "rua sem saída",
+        "numero": 984,
+        "logado": false
+      }
     ],
-
-    "listalocais":[]
-
-}
+    "listaLocais": [
+      {
+        "id": "1",
+        "nomeLocal": "Ponta do Pitoco",
+        "descricaoLocal": "Área contornando a lagoa com gramado, deck de madeira, bancos",
+        "cep": "88666666",
+        "endereco": "Rua do Pitoco",
+        "bairro": "Lagoa da Conceição",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.60782774761778",
+        "longitude": "-48.46615213745826",
+        "praticasEsportivas": [
+          "caminhada",
+          "skate"
+        ],
+        "quemCadastrou": "Thales Raimundo das Neves"
+      },
+      {
+        "id": "2",
+        "nomeLocal": "Napoleão Village",
+        "descricaoLocal": "Je ne parlê française",
+        "cep": "00000000",
+        "endereco": "Rua Waterloo",
+        "bairro": "Senna",
+        "cidade": "Parigi",
+        "estado": "Bourdeaux",
+        "latitude": "-27.60782774761665",
+        "longitude": "-48.46615213745444",
+        "praticasEsportivas": [
+          "esportes coletivos",
+          "surf"
+        ],
+        "quemCadastrou": "Augusta Levi Sales"
+      }
+    ]
+  }
