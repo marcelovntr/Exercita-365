@@ -1,29 +1,24 @@
 
 import './App.css'
-import { useEffect, useState } from 'react'
+import Header from "./components/header";
+import Footer from "./components/footer";
+
+
+import { UsuariosContextProvider } from "./context/UsuariosContext";
+
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
-  const [usuarios, setUsuarios] = useState([]);
-
-  useEffect(() => {
-    // alert('funcionando');
-    fetch("http://localhost:3000/usuarios")
-      .then(response => response.json())
-      .then(dados => setUsuarios(dados))
-      .catch(erro => console.log(erro))
-
-  }, [])
-
   return (
-    <>
-      <h1>Meu App</h1>
+    <UsuariosContextProvider>
+      <Header />
 
-      {!!usuarios && usuarios.map(usuario => (
-        <h2 key={usuario.id}> {usuario.nome}</h2>
+      <Outlet />
 
-      ))}
-    </>
+      <Footer />
+
+    </UsuariosContextProvider>
   )
 }
 
