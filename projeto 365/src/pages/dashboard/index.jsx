@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 function DashBoard() {
 
-    const { usuarios, setUsuarios, cadastrarUsuario, listalocais, setListaLocais, editarUsuario, 
-        apagarUsuario, lerUsuariosPorId, mostrarEdicao, setMostrarEdicao } = useContext(UsuariosContext);
+    const { usuarios, setUsuarios, cadastrarUsuario, listalocais, setListaLocais, editarUsuario,
+        apagarUsuario, lerUsuariosPorId, mostrarEdicao, setMostrarEdicao, setMostrarFormulario } = useContext(UsuariosContext);
 
     const navigate = useNavigate();
 
@@ -24,14 +24,11 @@ function DashBoard() {
         }
         return usuariosPorEstado;
     }
-
-    // Obtém o objeto com a contagem de usuários por estado
     const usuariosPorEstado = contarUsuariosPorEstado();
 
 
-
     function voltarParaCadastro(){
-        
+        setMostrarFormulario(false)
         setMostrarEdicao(true)
         navigate('/');
         //guardar o id do usuario ativo
