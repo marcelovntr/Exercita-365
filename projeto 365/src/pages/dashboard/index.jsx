@@ -6,16 +6,22 @@ import { useNavigate } from 'react-router-dom';
 
 function DashBoard() {
 
-    const { usuarios, setUsuarios, cadastrarUsuario, listalocais, setListaLocais, editarUsuario,
+    const { usuario, usuarios, setUsuarios, cadastrarUsuario, listalocais, setListaLocais, editarUsuario,
         apagarUsuario, lerUsuariosPorId, mostrarEdicao, setMostrarEdicao, setMostrarFormulario } = useContext(UsuariosContext);
+
+
+    useEffect(() => {
+        lerLocais(); // Carregar locais ao montar a página
+        lerUsuarios()
+    }, []);
 
     const navigate = useNavigate();
 
     function contarUsuariosPorEstado() {
         const usuariosPorEstado = {};
 
-        for (let estado of ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 
-        'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']) {
+        for (let estado of ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
+            'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO']) {
             usuariosPorEstado[estado] = 0;
         }
 
@@ -27,13 +33,13 @@ function DashBoard() {
     const usuariosPorEstado = contarUsuariosPorEstado();
 
 
-    function voltarParaCadastro(){
+    function voltarParaCadastro() {
         setMostrarFormulario(false)
         setMostrarEdicao(true)
-        navigate('/');
+        navigate('/login');
         //guardar o id do usuario ativo
         //faz lerUsuariosPorId(id) para preencher o formulário com informações do usuario ativo
-      
+
     }
 
 
@@ -92,35 +98,43 @@ function DashBoard() {
                 <div className={styles.containerlocais}>
                     <h1>Informações de Locais</h1>
                     <h2>tamanho array de listaLocais: {listalocais.length}</h2>
-                    {!!listalocais && listalocais.map(local => (
+                    {Array.isArray(listalocais) && listalocais.length > 0 ? (
+                        listalocais.map(local => (
+                            <div key={local.id}>
+                                <h3>{local.nomeLocal}</h3>
+                                <p>{local.descricaoLocal}</p>
+                                <p>{local.praticasEsportivas}</p>
 
-                        <div key={local.id}>
-                            <h3> {local.nomeLocal}</h3>
-                            <p>{local.descricaoLocal}</p>
-                            <p>{local.praticasEsportivas}</p>
-
-                        </div>
-                    ))}
+                            </div>
+                        ))
+                    ) : (
+                        <p>Nenhum local disponível</p>
+                    )}
 
                     <h4>Trilhas cadastradas: {listalocais.length}</h4>
                     <h4>Cadastradores:</h4>
-                    {!!listalocais && listalocais.map(cadastrou => (
-                        <ul key={cadastrou.id}>
-                            <li>{cadastrou.idCadastrante}</li>
-                        </ul>
 
-                    ))}
+                    {Array.isArray(listalocais) && listalocais.length > 0 ? (
+                        listalocais.map(cadastrou => (
+                            <div key={cadastrou.id}>
+                                <p>{cadastrou.idCadastrante}</p>
+
+                            </div>
+
+                        ))) : (
+                        <p>Nenhum local disponível</p>
+                    )}
 
                     <h4>Total de cadastradores únicos:
-                        {!!listalocais && listalocais
+                    {!!Array.isArray(listalocais) && listalocais.length > 0 && listalocais
                             .filter((local, index, self) =>
-                                self.filter((total) => total.idCadastrante === local.idCadastrante).length === 1
+                                self.findIndex((total) => total.idCadastrante === local.idCadastrante) === index
                             ).length
                         }</h4>
 
                 </div>
             </div>
-            <button onClick={()=> voltarParaCadastro()}>Editar Cadastro</button>
+            <button onClick={() => voltarParaCadastro()}>Editar Cadastro</button>
             <button onClick={() => apagarUsuario(usuario.id)}>Excluir Cadastro</button>
 
 
