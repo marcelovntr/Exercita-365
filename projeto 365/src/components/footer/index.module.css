@@ -1,0 +1,24 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 2em;
+    background-color: rgb(88, 66, 88);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.esquerda{
+margin-left: 50px;
+}
+
+.direita{
+    margin-right: 50px;
+}
+
+.direita a{
+    margin-right: 10px;
+    
+}
