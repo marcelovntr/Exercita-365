@@ -5,18 +5,20 @@ import { useNavigate } from 'react-router-dom';
 
 function PaginaLista() {
 
-    const { usuarios, cadastrarUsuario, editarUsuario, apagarUsuario, lerUsuariosPorId,
-        mostrarCadLocal, setCadLocal, mostrarEdicaoLocal, setMostrarEdicaoLocal
-    } = useContext(UsuariosContext);
+    const { lerLocais, setCadLocal, setMostrarEdicaoLocal, listalocais } = useContext(UsuariosContext);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        lerLocais(); // Carregar locais ao montar a página
+    }, []);
 
 
 
     function voltarCadastroLocais() {
         setCadLocal(false)
         setMostrarEdicaoLocal(true)
-        navigate('/cadastro');
+        navigate(`/cadastro/${id}`);
         //guardar o do local
         //faz lerLocaisporId(id) para preencher o formulário com informações do usuario ativo
 
@@ -27,8 +29,19 @@ function PaginaLista() {
                     <h1>Lista de Locais</h1>
                 </div>
 
-                <button onClick={voltarCadastroLocais}>Editar</button>
-                <button>Excluir</button>
+                {Array.isArray(listalocais) && listalocais.length > 0 ? (
+                listalocais.map(local => (
+                    <div key={local.id}>
+                        <h3>{local.nomeLocal}</h3>
+                        <p>{local.descricaoLocal}</p>
+                        <p>{local.praticasEsportivas}</p>
+                        <button onClick={() => voltarCadastroLocais(local.idCadastrante)}>Editar</button>
+                        <button>Excluir</button>
+                    </div>
+                ))
+            ) : (
+                <p>Nenhum local disponível</p>
+            )}
 
             </>
         )
