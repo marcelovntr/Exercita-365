@@ -2,12 +2,13 @@ import { UsuariosContext } from '../../context/UsuariosContext';
 import { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './index.module.css';
-
+import { useParams } from "react-router-dom";
 
 
 
 function CadastroLocalExercicio() {
 
+  const { id } = useParams();
   const { usuarios, cadastrarUsuario, editarUsuario, apagarUsuario, lerUsuariosPorId,
     mostrarCadLocal, setCadLocal, mostrarEdicaoLocal, setMostrarEdicaoLocal, cadastrarLocais } = useContext(UsuariosContext);
 
@@ -17,10 +18,6 @@ function CadastroLocalExercicio() {
 
 
 
-  useEffect(() => { //< ------- EXECUTAR APENAS QDO A PÁGINA CARREGAR --> PARA EXIBIR LISTAS E AFINS
-
-    lerLocais();
-  }, [])
 
   const cadOnSubmit = (formValue) => {
     // Lógica para submeter os dados
@@ -60,18 +57,18 @@ const cepOnSubmit = (data) => {
   // Restante da lógica de cadastro
 };
 
-
+useEffect(() => {
+  if (!!id) {
+    lerLocaisById(id);
+  }
+}, []
+)
+console.log(listalocais)
 
   return (
 
    // INSERIR EXIBIÇÃO DE LOCAIS DO JASON
    <div className={styles.container}>
-
-
-
-
-
-
 
 
    <div className={styles.textual}>
