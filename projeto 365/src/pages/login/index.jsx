@@ -8,22 +8,17 @@ function PaginaLogin() {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
 
   const { usuarios, setUsuarios, cadastrarUsuario, editarUsuario, mostrarFormulario, setMostrarFormulario, mostrarEdicao, setMostrarEdicao,
-    apagarUsuario, lerUsuariosPorId, procurarUsuario, lerUsuario } = useContext(UsuariosContext);
+    apagarUsuario, lerUsuariosPorId, procurarUsuario, lerUsuario, buscarCpf } = useContext(UsuariosContext);
 
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
 
-  useEffect(()=>{
-    lerUsuario();
-  })
-  
   const [cepPreenchido, setCepPreenchido] = useState(false);
 
 
-  function cadUsuOnsubmit(formValue) {
-    
-    //ADD lógica do CPF único!!!
-    cadastrarUsuario(formValue);
+  function cadUsuOnsubmit(novoUsuario) {
+
+    //ADD lógica do CPF único!
+    buscarCpf(novoUsuario);
+    // cadastrarUsuario(formValue);
   }
 
   function buscarCEP(cep, setValue) {
@@ -54,9 +49,15 @@ function PaginaLogin() {
     //editarUsuario(dadosUsuario, id)
   }
 
-  function validarLogin(dados) {
+  async function validarLogin(dados) {
+
+    await procurarUsuario(dados.email, dados.senha);
     console.log(dados)
-    procurarUsuario(dados.email, dados.senha);
+    //setar que está autenticado --> variável no localStogare!!!!!!!!
+    //guardar o ID tbm no localStorage --> p/ editar locais!!!
+    //REDIRECIONAR PARA O DASHBOARD!!!!!!
+
+    //no logOut apaga no localStorage
   }
 
   return (
@@ -65,53 +66,55 @@ function PaginaLogin() {
 
     <div className={styles.container}>
 
-      <div className={styles.textual}>
-        <h1>Exercita Aondi</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatem earum consequuntur nemo
-          dolorem nostrum sunt necessitatibus rem. Ab sapiente eius fugit ullam modi nobis amet, delectus at aspernatur officia.</p>
-      </div>
+      <div className={styles.textoELogin}>
 
-      <div className={styles.containerLogIn}>
+        <div className={styles.textual}>
+          <h1>Exercita Aondi</h1>
+          <p> Fitness PlaceX é um aplicativo web que simplifica a busca por locais ideais para atividades físicas nas variadas áreas locais.
+            Com uma interface intuitiva, os usuários podem encontrar facilmente locais próximos, descrições detalhadas, verificar quais atividades são praticáveis.
+            Fitness PlaceX é o seu parceiro ideal para encontrar o lugar perfeito
+            para seus treinos ou lazer e ainda encontrar outros praticantes e fazer amizades. </p>
+        </div>
 
-        <span>Login</span>
+        <div className={styles.containerLogIn}>
 
-        <form className={styles.containerAcesso} onSubmit={handleSubmit(validarLogin)}>
-     
+          <span>Login</span>
 
-          <label htmlFor="emailLogin">Email</label>
-          <input
-            type="email"
-            name="emailLogin"
-            placeholder='email@email'
-            {...register("email", {
-              required: "Email obrigatório",
-            })}
-          />
-          {errors.emailLogin && <p>{errors.emailLogin.message}</p>}
+          <form className={styles.containerAcesso} onSubmit={handleSubmit(validarLogin)}>
 
-          <label htmlFor="senhaLogin">Senha</label>
-          <input
-            type="password"
-            name="senhaLogin"
-            placeholder='senha de pelo menos 6 dígitos'
-            {...register("senha", {
-              required: "Senha obrigatória",
-              minLength: { value: 6, message: "A senha deve ter no mínimo 6 caracteres" },
-            })}
-          />
-          {errors.senhaLogin && <p>{errors.senhaLogin.message}</p>}
 
-          <button type="submit">LogIn</button>
+            <label htmlFor="emailLogin">Email</label>
+            <input
+              type="email"
 
-        </form>
+              placeholder='email@email'
+              {...register("email", {
+                required: "Insira email válido",
+              })}
+            />
+            {errors.email && <p>{errors.email.message}</p>}
 
-        <span>Não possui conta?</span>
+            <label htmlFor="senhaLogin">Senha</label>
+            <input
+              type="password"
+
+              placeholder='senha de pelo menos 6 dígitos'
+              {...register("senha", {
+                required: "Insira sua senha ",
+                minLength: { value: 6, message: "A senha deve ter no mínimo 6 caracteres" },
+              })}
+            />
+            {errors.senha && <p>{errors.senha.message}</p>}
+
+            <button type="submit">LogIn</button>
+
+          </form>
+
+          <span>Não possui conta?</span>
           <button onClick={() => { setMostrarFormulario(true); setMostrarEdicao(false) }}>SignUp</button>
-      </div>
-      
-      <hr />
+        </div>
 
-      <hr />
+      </div>
 
       {mostrarFormulario && (
         <>
@@ -140,7 +143,8 @@ function PaginaLogin() {
               placeholder='000000000 - apenas números'
               {...register("cpf", {
                 required: "Obrigatório o preenchimento",
-                maxLength: { value: 9, message: "máximo de 9 caracteres" }
+                maxLength: { value: 11, message: "são 11 caracteres" },
+                minLength: { value: 11, message: "mínimimo de 11 caracteres"}
               })} />
             {errors.cpf && <p>{errors.cpf.message}</p>}
 
@@ -237,6 +241,7 @@ function PaginaLogin() {
       {mostrarEdicao && (
         <>
           <h2>Edição de Cadastro</h2>
+          {/* //FUNÇÃO DE EDICAO  editarLogado(id)*/}
           <form className={styles.formlogin} onSubmit={handleSubmit(onsubmit)}>
             <label htmlFor="nome">Nome</label>
             <input type="text"
