@@ -7,17 +7,53 @@
    align-items: center;
     justify-content: center;
 }
-
+.textual {
+    margin-top: 80px;
+    margin-bottom: 0px;
+    
+    height: 100px;
+    color: rgba(73, 66, 66, 0.87);
+   
+  }
 
 .containerinterno{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(165, 85, 175);
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .containerusuarios{
-background-color: blanchedalmond;
+
+width: 300px;
+padding: 8px;
+margin-right: 0px;
+color: white;
 }
 
 .containerlocais{
-background-color: azure;
+
+width: 300px;
+padding: 8px;
+margin-left: 30px;
+color: white;
+}
+
+.containerCard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    max-width: 95%;
+    min-height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 4px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: rgb(235, 229, 236);
+    color: rgb(62, 26, 95);
 }
