@@ -1,108 +1,210 @@
 {
-    "usuarios": [
-      {
-        "id": "1",
-        "nome": "Ruan Vinicius",
-        "sexo": "masculino",
-        "cpf": "42326868005",
-        "nascimento": "15/02/1949",
-        "email": "ruan.mmoura@tarp.com.br",
-        "senha": "123456",
-        "cep": "72020283",
-        "endereco": "Área Especial Área Especial 26",
-        "bairro": "Taguatinga Sul (Taguatinga)",
-        "cidade": "Brasília",
-        "estado": "DF",
-        "complemento": "casa verde",
-        "numero": 781,
-        "logado": false
-      },
-      {
-        "id": "2",
-        "nome": "Anthony Aragão",
-        "sexo": "masculino",
-        "cpf": "49060269071",
-        "nascimento": "24/01/1993",
-        "email": "geraldo_moraes@teravida.com.br",
-        "senha": "aUaZG04OGt",
-        "cep": "68909821",
-        "endereco": "Avenida Glicério de Souza Figueredo",
-        "bairro": "Novo Horizonte",
-        "cidade": "Macapá",
-        "estado": "AP",
-        "complemento": "após a última figueira",
-        "numero": 204,
-        "logado": false
-      },
-      {
-        "id": "3",
-        "nome": "Thales Raimundo das Neves",
-        "sexo": "masculino",
-        "cpf": "60877602611",
-        "nascimento": "11/04/1998",
-        "email": "thalesraimundodasneves@suzano.com.br",
-        "senha": "cLhG6stBlG",
-        "cep": "69922038",
-        "endereco": "Avenida Caracas",
-        "bairro": "Jorge Lavocat",
-        "cidade": "Rio Branco",
-        "estado": "AC",
-        "complemento": "",
-        "numero": 108,
-        "logado": false
-      },
-      {
-        "id": "4",
-        "nome": "Augusta Levi Sales",
-        "sexo": "feminino",
-        "cpf": "57096236104",
-        "nascimento": "26/04/1988",
-        "email": "augusta-sales87@termaqui.com.br",
-        "senha": "XtsyDFmeZl",
-        "cep": "88310060",
-        "endereco": "Avenida Agostinho Alves Ramos",
-        "bairro": "Cordeiros",
-        "cidade": "Itajaí",
-        "estado": "SC",
-        "complemento": "rua sem saída",
-        "numero": 984,
-        "logado": false
-      }
-    ],
-    "listaLocais": [
-      {
-        "id": "1",
-        "nomeLocal": "Ponta do Pitoco",
-        "descricaoLocal": "Área contornando a lagoa com gramado, deck de madeira, bancos",
-        "cep": "88666666",
-        "endereco": "Rua do Pitoco",
-        "bairro": "Lagoa da Conceição",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.60782774761778",
-        "longitude": "-48.46615213745826",
-        "praticasEsportivas": [
-          "caminhada",
-          "skate"
-        ],
-        "quemCadastrou": "Thales Raimundo das Neves"
-      },
-      {
-        "id": "2",
-        "nomeLocal": "Napoleão Village",
-        "descricaoLocal": "Je ne parlê française",
-        "cep": "00000000",
-        "endereco": "Rua Waterloo",
-        "bairro": "Senna",
-        "cidade": "Parigi",
-        "estado": "Bourdeaux",
-        "latitude": "-27.60782774761665",
-        "longitude": "-48.46615213745444",
-        "praticasEsportivas": [
-          "esportes coletivos",
-          "surf"
-        ],
-        "quemCadastrou": "Augusta Levi Sales"
-      }
-    ]
-  }
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Ruan Vinicius",
+      "sexo": "masculino",
+      "cpf": "42326868005",
+      "nascimento": "15/02/1949",
+      "email": "ruan.mmoura@tarp.com.br",
+      "senha": "123456",
+      "cep": "72020283",
+      "endereco": "Área Especial Área Especial 26",
+      "bairro": "Taguatinga Sul (Taguatinga)",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "complemento": "casa verde",
+      "numero": "781"
+    },
+    {
+      "id": "2",
+      "nome": "Anthony Aragão",
+      "sexo": "masculino",
+      "cpf": "49060269071",
+      "nascimento": "24/01/1993",
+      "email": "geraldo_moraes@teravida.com.br",
+      "senha": "aUaZG04OGt",
+      "cep": "68909821",
+      "endereco": "Avenida Glicério de Souza Figueredo",
+      "bairro": "Novo Horizonte",
+      "cidade": "Macapá",
+      "estado": "AP",
+      "complemento": "após a última figueira",
+      "numero": "204"
+    },
+    {
+      "id": "3",
+      "nome": "Thales Raimundo das Neves",
+      "sexo": "masculino",
+      "cpf": "98756743234",
+      "nascimento": "11/04/1998",
+      "email": "thalesraimundodasneves@suzano.com.br",
+      "senha": "cLhG6stBlG",
+      "cep": "69922038",
+      "endereco": "Avenida Caracas",
+      "bairro": "Jorge Lavocat",
+      "cidade": "Rio Branco",
+      "estado": "AC",
+      "complemento": "",
+      "numero": "108"
+    },
+    {
+      "id": "4",
+      "nome": "Augusta Levi Sales",
+      "sexo": "feminino",
+      "cpf": "54673832145",
+      "nascimento": "26/04/1988",
+      "email": "augusta-sales87@termaqui.com.br",
+      "senha": "XtsyDFmeZl",
+      "cep": "88310060",
+      "endereco": "Avenida Agostinho Alves Ramos",
+      "bairro": "Cordeiros",
+      "cidade": "Itajaí",
+      "estado": "SC",
+      "complemento": "rua sem saída",
+      "numero": "984"
+    },
+    {
+      "id": "5",
+      "email": "marcelo@marcelo",
+      "senha": "123456",
+      "nome": "feio",
+      "sexo": "masculino",
+      "cpf": "88945321987",
+      "nascimento": "1987-10-31",
+      "cep": "88034354",
+      "endereco": "Servidão Violetas Azuis",
+      "bairro": "Itacorubi",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "casa verde",
+      "numero": "111"
+    },
+    {
+      "id": "d601",
+      "email": "ana@julia.com.br",
+      "senha": "654321",
+      "nome": "Ana Julia",
+      "sexo": "feminino",
+      "cpf": "66777888999",
+      "nascimento": "1999-12-20",
+      "cep": "88037000",
+      "endereco": "Rua João Pio Duarte Silva",
+      "bairro": "Córrego Grande",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "Sempre tão linda",
+      "numero": "171"
+    }
+  ],
+  "listaLocais": [
+    {
+      "id": "1",
+      "nomeLocal": "Ponta do Pitoco",
+      "descricaoLocal": "Área contornando a lagoa com gramado, deck de madeira, bancos",
+      "cep": "88666666",
+      "endereco": "Rua do Pitoco",
+      "bairro": "Lagoa da Conceição",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.60782774761778",
+      "longitude": "-48.46615213745826",
+      "praticasEsportivas": [
+        "caminhada",
+        "skate"
+      ],
+      "idCadastrante": "1"
+    },
+    {
+      "id": "2",
+      "nomeLocal": "Jardin des Tuilerie",
+      "descricaoLocal": "Je ne parlê française",
+      "cep": "12345678",
+      "endereco": "Quai des Tuileries",
+      "bairro": "Louvre",
+      "cidade": "Paris",
+      "estado": "Parisienses",
+      "latitude": "48.86388900000",
+      "longitude": "2.32611100000",
+      "praticasEsportivas": [
+        "esportes coletivos",
+        "surf"
+      ],
+      "idCadastrante": "32"
+    },
+    {
+      "id": "c0c3",
+      "nomeLocal": "Parque Ibirapuera",
+      "descricaoLocal": "Local amplo, vegetação exuberante, áreas amplas para esportes coletivos e práticas individuais e reunião para diversos fins.",
+      "cep": "04094050",
+      "endereco": "Avenida Pedro Álvares Cabral",
+      "bairro": "Parque Ibirapuera",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "latitude": "-23.586521476591",
+      "longitude": "-46.657944776719646",
+      "praticasEsportivas": [
+        "caminhada",
+        "corrida",
+        "musculação",
+        "skate",
+        "esportes coletivos"
+      ],
+      "idCadastrante": "5"
+    },
+    {
+      "id": "1712",
+      "nomeLocal": "Parque Moacyr Scliar",
+      "descricaoLocal": "também chamado Parque do Gasômetro, é um parque urbano localizado no Centro Histórico de Porto Alegre, às margens do Lago Guaíba. Com 1,3 quilômetros de extensão",
+      "cep": "90010283",
+      "endereco": "Rua Duque de Caxias",
+      "bairro": "Centro Histórico",
+      "cidade": "Porto Alegre",
+      "estado": "RS",
+      "latitude": "-30.03779603988146",
+      "longitude": "-51.2417343614829",
+      "praticasEsportivas": [
+        "caminhada",
+        "corrida",
+        "esportes coletivos"
+      ],
+      "idCadastrante": "4"
+    },
+    {
+      "id": "197f",
+      "nomeLocal": "Quadras Poliesportivas Beira Mar Norte",
+      "descricaoLocal": "Quadras de areia para prática de beach tennis, volei e academia, além de ciclovia e área de corrida e caminha",
+      "cep": "88010400",
+      "endereco": "Praça Quinze de Novembro",
+      "bairro": "Centro",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.584413778358503",
+      "longitude": "-48.54753204071557",
+      "praticasEsportivas": [
+        "caminhada",
+        "corrida",
+        "musculação",
+        "esportes coletivos"
+      ],
+      "idCadastrante": "d601"
+    },
+    {
+      "id": "cfa0",
+      "nomeLocal": "Pista de Skate da Trindade",
+      "descricaoLocal": "Um local com variedade de pistas para a prática de skate, patins e bicicleta. Além de espaço desfrutar sozinho ou em grupo.",
+      "cep": "88035005",
+      "endereco": "Rua Santa Mônica",
+      "bairro": "Santa Mônica",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.589673450716738",
+      "longitude": "-48.516808015812906",
+      "praticasEsportivas": [
+        "caminhada",
+        "skate"
+      ],
+      "idCadastrante": "d601"
+    }
+  ]
+}
