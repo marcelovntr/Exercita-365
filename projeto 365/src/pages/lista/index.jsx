@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function PaginaLista() {
 
-    const { lerLocais, setCadLocal, setMostrarEdicaoLocal, listalocais } = useContext(UsuariosContext);
+    const { lerLocais, setCadLocal, setMostrarEdicaoLocal,  listalocais,  apagarLocal} = useContext(UsuariosContext);
 
     const navigate = useNavigate();
 
@@ -21,31 +21,50 @@ function PaginaLista() {
         navigate(`/cadastro/${id}`);
         //guardar o do local
         //faz lerLocaisporId(id) para preencher o formulário com informações do usuario ativo
-
-
+    }
         return (
-            <>
-                <div className={styles.container}>
-                    <h1>Lista de Locais</h1>
+
+            <div className={styles.container}>
+
+
+
+                <div className={styles.textual}>
+
+                    <h1>Lista de Locais X</h1>
                 </div>
 
-                {Array.isArray(listalocais) && listalocais.length > 0 ? (
-                listalocais.map(local => (
-                    <div key={local.id}>
-                        <h3>{local.nomeLocal}</h3>
-                        <p>{local.descricaoLocal}</p>
-                        <p>{local.praticasEsportivas}</p>
-                        <button onClick={() => voltarCadastroLocais(local.idCadastrante)}>Editar</button>
-                        <button>Excluir</button>
-                    </div>
-                ))
-            ) : (
-                <p>Nenhum local disponível</p>
-            )}
 
-            </>
+
+                <div className={styles.containerRenderizador}>
+                    {Array.isArray(listalocais) && listalocais.length > 0 ? (
+                        listalocais.map(local => (
+                            <div key={local.id}>
+                                <h3>Local: {local.nomeLocal}</h3>
+                                <p>Descrição: {local.descricaoLocal}</p>
+                                <p>local: {local.endereco}</p>
+                                <p>Bairro: {local.bairro}</p>
+                                <p>Cidade: {local.cidade}</p>
+                                <p>Estado: {local.estado}</p>
+                                <p>Latitude: {local.latitude}</p>
+                                <p>Longitude: {local.longitude}</p>
+
+                                <p>Práticas permitidas: {local.praticasEsportivas.map((praticaX, index) => (
+                                    <span key={index}>{index == local.praticasEsportivas.length - 1 ? `${" "}${praticaX}.` :
+                                        `${" "}${praticaX},`}
+                                    </span>
+                                ))}</p>
+                                <button onClick={() => voltarCadastroLocais(local.id)}>Editar</button>
+                                <button onClick={() => apagarLocal(local.id)}>Excluir</button>
+                            </div>
+                        ))
+                    ) : (
+                        <p>Nenhum local disponível</p>
+                    )
+                    }
+                </div>
+            </div>
+
         )
     }
-}
 
     export default PaginaLista;
