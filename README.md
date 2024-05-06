@@ -10,7 +10,9 @@ os exercícios em cada ponto e registrar suas próprias contribuições para o s
 ;
 
 #Tecnologias utilizadas
-HTML5 , JavaScript, React
+
+● HTML5 , JavaScript, React
+
 ● Descrever quais técnicas e tecnologias utilizadas. Aqui você também pode inserir
 alguma imagem ou diagrama para melhor entendimento;
 
