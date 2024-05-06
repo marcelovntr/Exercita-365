@@ -108,3 +108,8 @@ border-radius: 4px;
   box-shadow: none;
   outline: none;
 }
+
+.formlogin p{
+  color: rgb(221, 255, 68);
+  font-size: 0.8em;
+}
