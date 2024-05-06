@@ -11,7 +11,9 @@ os exercícios em cada ponto e registrar suas próprias contribuições para o s
 
 #Tecnologias utilizadas
 
-● HTML5: :globe_with_meridians: , JavaScript: :computer:, React: :atom_symbol:
+●     HTML5: :html5:
+    JavaScript: :javascript:
+    React: :react:
 
 ● Descrever quais técnicas e tecnologias utilizadas. Aqui você também pode inserir
 alguma imagem ou diagrama para melhor entendimento;
