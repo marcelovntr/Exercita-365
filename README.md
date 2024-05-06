@@ -9,9 +9,13 @@ encontrar pontos próximos em um mapa interativo (ou lista), visualizar informa�
 os exercícios em cada ponto e registrar suas próprias contribuições para o sistema)
 ;
 
+#Tecnologias utilizadas
+HTML5 , JavaScript, React
 ● Descrever quais técnicas e tecnologias utilizadas. Aqui você também pode inserir
 alguma imagem ou diagrama para melhor entendimento;
 
 ● Descrever como executar (npm install; npm run dev; COMANDOS JSON-SERVER;
 
-● Descrever quais melhorias podem ser aplicada
+● Melhorias cabíveis:
+- Adições e aprimoranto de estilos em toda aplicação
+- 
