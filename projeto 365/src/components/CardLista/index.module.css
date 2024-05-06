@@ -1,0 +1,38 @@
+.cardcontainer{
+    display: flex;
+    flex-direction: column;
+    box-shadow: .2em .2em .8em rgb(65, 14, 52);
+    height: 18em;
+    margin: 10px 10px;
+    background-color: white;
+    width: 400px;
+    font-size: 0.8em;
+    padding: 10px 15px;
+    word-wrap: break-word;
+    overflow-y: auto; 
+    border-radius: 4px;
+}
+.cardcontainer span{
+    font-weight: bolder;
+}
+
+.topo{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+}
+
+.latLong{
+    display: flex;
+    justify-content: center;
+}
+
+.praticas span {
+    font-weight: bold;
+}
+
+.praticas p {
+    font-weight: normal;
+}

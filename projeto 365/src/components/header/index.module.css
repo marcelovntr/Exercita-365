@@ -1,28 +1,36 @@
 .header {
-    position: fixed;
-    width: 100vw;
-    height: 3em;
-    background-color: rgb(88, 66, 88);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-left: 0;
-    
-  }
+  position: fixed;
+  width: 100vw;
+  height: 3em;
+  background-color: rgb(88, 66, 88);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
-  .header h4{
-    margin-left: 80px;
-    width: 130px;
-  }
-  .link {
-    text-decoration: none;
-    color: white;
-    margin: auto 2em;
-  }
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 50px;
+  
+}
+
+.header h4{
+  margin-left: 80px;
+  width: 130px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  margin: auto 2em;
+}
+
+.butao{
+  width: 100px;
+  height: 32px;
+  margin-right: 50px;
+  font-size: 1.1em;
+}
