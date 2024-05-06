@@ -1,4 +1,4 @@
-# Exercita-365
+# Fitness PlaceX
 
 ● Criar um nome para o seu software;
 
