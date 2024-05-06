@@ -7,8 +7,12 @@ function PaginaLogin() {
 
   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
 
-  const { usuarios, setUsuarios, cadastrarUsuario, editarUsuario, mostrarFormulario, setMostrarFormulario, mostrarEdicao, setMostrarEdicao,
-    apagarUsuario, lerUsuariosPorId, procurarUsuario, lerUsuario, buscarCpf } = useContext(UsuariosContext);
+  const { usuarios, setUsuarios, cadastrarUsuario, editarUsuario, mostrarFormulario, setMostrarFormulario, 
+    mostrarEdicao, setMostrarEdicao, apagarUsuario, lerUsuariosPorId, procurarUsuario, lerUsuario, buscarCpf } = useContext(UsuariosContext);
+
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
 
 
   const [cepPreenchido, setCepPreenchido] = useState(false);
@@ -34,11 +38,11 @@ function PaginaLogin() {
       .catch(error => console.error('Erro ao buscar o CEP:', error));
   }
   const cepOnSubmit = (data) => {
-    // Lógica para submeter os dados
+    
     console.log(data);
-    // Executar a busca do CEP
+   
     buscarCEP(data.cep, setValue);
-    // Restante da lógica de cadastro
+    
   };
 
 
