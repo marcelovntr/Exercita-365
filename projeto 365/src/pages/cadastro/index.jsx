@@ -27,13 +27,15 @@ function CadastroLocalExercicio() {
   };
 
 
-  const atualizarOnSubmit = (formValue) => {
-    // Lógica para submeter os dados
-    console.log(formValue);
-    // setNovoLocal();
-    editarLocais(formValue);
-  };
-
+  const atualizarOnSubmit =  (formValue) => {
+    
+    console.log('antes  de editar', formValue);
+    // setNovoLocal();'
+     editarLocais(formValue, id);
+    
+    console.log('depois de editar', formValue);
+        
+      };
 
 
 
