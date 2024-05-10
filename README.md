@@ -29,3 +29,7 @@ Executar os comandos abaixo referentes ao json-server:
 - Inclusão de verificação de usuário para a ação de excluir ou alterar dados de um local cadastrado;
 - adição dos mapas;
 - aplicar responsividade.
+
+Vídeo explicativo:
+- https://drive.google.com/drive/u/0/folders/13zM___VB1K37QfbhuhZY9XL1geeUWfTQ
+  *Errata: Quando se fala em não completude da função de cadastro, refere-se a edição de cadastro do usuário, função não obrigatória do aplicativo.
