@@ -73,7 +73,7 @@ function PaginaLogin() {
       <div className={styles.textoELogin}>
 
         <div className={styles.textual}>
-          <h1>Exercita Aondi</h1>
+          <h1>Fitness PlaceX</h1>
           <p> Fitness PlaceX é um aplicativo web que simplifica a busca por locais ideais para atividades físicas nas variadas áreas locais.
             Com uma interface intuitiva, os usuários podem encontrar facilmente locais próximos, descrições detalhadas, verificar quais atividades são praticáveis.
             Fitness PlaceX é o seu parceiro ideal para encontrar o lugar perfeito
