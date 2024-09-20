@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form"
 
 function PaginaLogin() {
 
-  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+  const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm();
 
-  const { usuarios, setUsuarios, cadastrarUsuario, editarUsuario, mostrarFormulario, setMostrarFormulario, 
+  const { usuarios, setUsuarios, cadastrarUsuario, editarUsuario, mostrarFormulario, setMostrarFormulario,
     mostrarEdicao, setMostrarEdicao, apagarUsuario, lerUsuariosPorId, procurarUsuario, lerUsuario, buscarCpf } = useContext(UsuariosContext);
 
   const [email, setEmail] = useState('');
@@ -18,11 +18,11 @@ function PaginaLogin() {
   const [cepPreenchido, setCepPreenchido] = useState(false);
 
 
-  function cadUsuOnsubmit(novoUsuario) {
-
-    //ADD lógica do CPF único!
-    buscarCpf(novoUsuario);
-    // cadastrarUsuario(formValue);
+  async function cadUsuOnsubmit(novoUsuario) {
+    let cpfExistente = await buscarCpf(novoUsuario);
+    if (!cpfExistente) {
+      cadastrarUsuario(novoUsuario);
+    }
   }
 
   function buscarCEP(cep, setValue) {
@@ -37,12 +37,11 @@ function PaginaLogin() {
       })
       .catch(error => console.error('Erro ao buscar o CEP:', error));
   }
-  const cepOnSubmit = (data) => {
-    
-    console.log(data);
-   
-    buscarCEP(data.cep, setValue);
-    
+ const cepOnSubmit =  (data) => {
+    const cepValue = getValues("cep");
+    console.log(data)
+     buscarCEP(cepValue, setValue);
+
   };
 
 
@@ -57,11 +56,7 @@ function PaginaLogin() {
 
     await procurarUsuario(dados.email, dados.senha);
     console.log(dados)
-    //setar que está autenticado --> variável no localStogare!!!!!!!!
-    //guardar o ID tbm no localStorage --> p/ editar locais!!!
-    //REDIRECIONAR PARA O DASHBOARD!!!!!!
-
-    //no logOut apaga no localStorage
+   
   }
 
   return (
@@ -148,7 +143,7 @@ function PaginaLogin() {
               {...register("cpf", {
                 required: "Obrigatório o preenchimento",
                 maxLength: { value: 11, message: "são 11 caracteres" },
-                minLength: { value: 11, message: "mínimimo de 11 caracteres"}
+                minLength: { value: 11, message: "mínimimo de 11 caracteres" }
               })} />
             {errors.cpf && <p>{errors.cpf.message}</p>}
 
@@ -188,7 +183,7 @@ function PaginaLogin() {
 
             {/* ***********************************************************************
 *********************************************************************** */}
-            <button type="button" onClick={handleSubmit(cepOnSubmit)}>Buscar CEP</button>
+            <button type="button" onClick={cepOnSubmit}>Buscar CEP</button>
 
             <label htmlFor="endereco">Endereço</label>
             <input type="text"

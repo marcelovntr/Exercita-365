@@ -50,8 +50,9 @@ export const UsuariosContextProvider = ({ children }) => {
 
       if (cpfExistente) {
         alert('CPF já cadastrado. Por favor, insira um CPF único.');
+        return true
       } else {
-        cadastrarUsuario(novoUsuario);
+        return false
       }
     } catch {
       alert('Erro ao buscar usuários.');
@@ -64,7 +65,6 @@ export const UsuariosContextProvider = ({ children }) => {
       body: JSON.stringify(novoUsuario),
       headers: {
         'Content-Type': 'application/json',
-
       },
     }
     )
@@ -168,7 +168,7 @@ export const UsuariosContextProvider = ({ children }) => {
 
     //OU: localStorage.clear();
     window.location.href = "/login";
-}
+  }
 
 
   //*****************************CONTEXTO LOCAIS*****************************************************************************
@@ -275,7 +275,7 @@ export const UsuariosContextProvider = ({ children }) => {
 
   return (
     <UsuariosContext.Provider value={{
-      usuarios, setUsuarios, lerUsuarios, cadastrarUsuario, novoUsuario, editarUsuario, apagarLocal, 
+      usuarios, setUsuarios, lerUsuarios, cadastrarUsuario, novoUsuario, editarUsuario, apagarLocal,
       listalocais, setListaLocais, lerLocais, cadastrarLocais,
       lerUsuariosPorId, mostrarEdicao, setMostrarEdicao, mostrarFormulario, setMostrarFormulario,
       mostrarCadLocal, setCadLocal, mostrarEdicaoLocal, setMostrarEdicaoLocal, editarLocais, procurarUsuario, buscarCpf,
