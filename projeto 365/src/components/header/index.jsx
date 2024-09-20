@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { UsuariosContext } from "../../context/UsuariosContext";
 
 function Header() {
-    const {sair} = useContext(UsuariosContext);
+    const {sair, mostrarCadLocal, mostrarEdicaoLocal} = useContext(UsuariosContext);
 
 
     return (
@@ -18,7 +18,12 @@ function Header() {
 
                 <Link to="/lista" className={styles.link}>Encontrar Locais</Link>
 
-                <Link to="/cadastro" className={styles.link}>Cadastrar Locais</Link>
+                <Link to="/cadastro" className={styles.link} 
+                onClick={()=> {mostrarCadLocal(true),mostrarEdicaoLocal(false)}}
+                >Cadastrar Locais</Link>
+                
+
+    
             </nav>
             <button className={styles.butao} onClick={sair}>Log Out</button>
         </header>
